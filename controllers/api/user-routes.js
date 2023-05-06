@@ -70,7 +70,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Log out route
+// Log out route /api/users/logout
 router.post("/logout", (req, res) => {
   // Checking to see if the user is actually logged in
   if (req.session.loggedIn) {
