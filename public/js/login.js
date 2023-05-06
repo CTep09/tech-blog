@@ -1,13 +1,17 @@
+// Login form submission handler
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector("#email-login").value.trim();
+  // Retrieve username and password values from the form
+  const username = document.querySelector("#username-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
-  if (email && password) {
-    const response = await fetch("/api/users/login", {
+  // If both username and password have values
+  if (username && password) {
+    // Send post request to server to authenticate user
+    const response = await fetch("/api/user/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -19,6 +23,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Attach login form submission handler to form element
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);

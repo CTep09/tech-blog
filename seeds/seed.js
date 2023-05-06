@@ -7,12 +7,12 @@ const userData = require("./userSeed.json");
 const seedAll = async () => {
     await sequelize.sync({ force: true });
 
-    const users = await User.bulkCreate(userData, {
+    const user = await User.bulkCreate(userData, {
         individualHooks: true,
         returning: true,
       });
 
-    console.log("\n------- USERS DATA SEEDED ------\n");
+    console.log("\n------- user DATA SEEDED ------\n");
 
     process.exit(0);
 }
