@@ -1,0 +1,12 @@
+<div class="card-body">
+  {{#each posts}}
+    <a class="card" href="/dashboard/edit/{{id}}">
+      <span>{{title}}</span>
+      <span>{{format_date date_created}}</span>
+      <div>
+        Posted by
+        {{user.username}}
+      </div>
+    </a>
+  {{/each}}
+</div>
