@@ -1,0 +1,43 @@
+{{!--  
+WHEN I click on the dashboard option in the navigation
+THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
+WHEN I click on the button to add a new blog post
+THEN I am prompted to enter both a title and contents for my blog post
+WHEN I click on the button to create a new blog post
+THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
+WHEN I click on one of my existing posts in the dashboard
+THEN I am able to delete or update my post and taken back to an updated dashboard
+--}}
+
+<h2>Welcome to your Dashboard</h2>
+
+{{#if posts}}
+{{#each posts}}
+<div class="blog-post">
+    <h3>{{title}}</h3>
+    <p>{{{contents}}}</p>
+    <button class="delete-btn" data-post-id="{{id}}">Delete</button>
+    <button class="edit-btn" data-post-id="{{id}}">Edit</button>
+</div>
+{{/each}}
+{{else}}
+<p>No blog posts found</p>
+{{/if}}
+
+<button id="add-post-btn">Add New Blog Post</button>
+
+<div id="add-post-form" style="display: none;">
+    <h3>Add New Blog Post</h3>
+    <form>
+        <div class="form-group">
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" />        
+        <div class="form-group">
+            <label for="post-contents">Contents:</label>
+            <textarea id="post-contents"></textarea>
+        </div>
+        <button id="create-post-btn">Create</button>
+        <button id="cancel-btn">Cancel</button>
+    </form>
+</div>
+

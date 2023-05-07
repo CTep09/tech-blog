@@ -6,7 +6,7 @@ const signupFormHandler = async (event) => {
 
   const response = await fetch("/api/user", {
     method: "POST",
-    body: JSON.stringify({ name, username, password }),
+    body: JSON.stringify({ username, password }),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -18,5 +18,5 @@ const signupFormHandler = async (event) => {
 };
 
 document
-  .querySelector("#signup-form")
+  .querySelector("#signup-btn")
   .addEventListener("submit", signupFormHandler);
