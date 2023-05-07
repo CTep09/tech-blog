@@ -1,3 +1,4 @@
+// Importing dependencies
 const router = require("express").Router();
 const { User } = require("../../models");
 
@@ -12,6 +13,8 @@ router.post("/", async (req, res) => {
 
     // Save session data
     req.session.save(() => {
+
+      // Store the user's ID, username, and logged-in status in the session
       req.session.userId = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
@@ -55,14 +58,14 @@ router.post("/login", async (req, res) => {
 
     // Saving session data
     req.session.save(() => {
+
+      // Store the user's ID, username, and logged-in status in the session
       req.session.userId = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
 
       // Letting the user know they have successfully logged in
-      res
-        .status(200)
-        .json({ user: newUser, message: "You are logged in!" });
+      res.status(200).json({ user: newUser, message: "You are logged in!" });
     });
   } catch (err) {
     console.log(err);
@@ -84,4 +87,5 @@ router.post("/logout", (req, res) => {
   }
 });
 
+// Exporting router
 module.exports = router;

@@ -10,6 +10,8 @@ THEN I see navigation links for the homepage, the dashboard, and the option to l
 }}
 <div class="card">
   <h2>Sign Up</h2>
+
+  {{!-- Signup Form --}}
   <div id="signup-form" class="card-body">
     <label for="username-signup">Username</label>
     <input type="text" id="username-signup" />
@@ -18,8 +20,13 @@ THEN I see navigation links for the homepage, the dashboard, and the option to l
     <label for="password-signup">Password</label>
     <input type="text" id="password-signup" />
   </div>
+
+  {{!-- Submit button --}}
   <button type="submit" id="signup-btn" class="btn">Submit</button>
-  <a href="/login">Already a user? Login here</a>
+
+  {{!-- Link to login page --}}
+  <button href="/login">Already a user? Login here</button>
 </div>
 
+{{!-- Include the signup.js script --}}
 <script src="/js/signup.js"></script>

@@ -1,6 +1,8 @@
+// Importing dependencies
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+// Comment model definition
 class Comment extends Model {}
 
 Comment.init(
@@ -39,4 +41,5 @@ Comment.init(
   }
 );
 
+// Exporting routes
 module.exports = Comment;
