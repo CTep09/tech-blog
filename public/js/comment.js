@@ -15,7 +15,7 @@ const commentFormHandler = async function (event) {
   });
 
   // Reload the page to see the updated comments
-  document.location.reload;
+  document.location.reload();
 };
 
 // Add an event listener to the comment form submission

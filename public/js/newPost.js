@@ -15,7 +15,7 @@ const newFormHandler = async function (event) {
   });
 
   // Redirect the user to the dashboard page
-  document.location.replace('dashboard');
+  document.location.replace('/dashboard');
 };
 
 // Add an event listener to the new post form submission

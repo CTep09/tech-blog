@@ -31,7 +31,7 @@ const sesh = {
 app.use(session(sesh));
 
 // Create an instance of the Handlebars engine
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers: helpers });
 
 // Set Handlebars as the template engine
 // Set the default view engine to Handlebars
