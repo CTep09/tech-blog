@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get a single post by its ID at '/posts/:id' endpoint
-router.get("/posts/id", async (req, res) => {
+router.get("/posts/:id", async (req, res) => {
   try {
     // Find the post by its ID and include the associated User and Comment models
     const postData = await Post.findByPk(req.params.id, {
@@ -33,11 +33,12 @@ router.get("/posts/id", async (req, res) => {
         },
       ],
     });
+    console.log(postData)
 
     if (postData) {
       // If post exists, retrieve its plain object representation
       const post = postData.get({ plain: true });
-
+      console.log(post)
       // Render the 'single-post' template and pass in the post data
       res.render("single-post", { post });
     } else {

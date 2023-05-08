@@ -1,0 +1,16 @@
+<div class="card">
+  <h5 class="card-title">Edit Post</h5>
+  <form id="edit-post-form">
+
+    <div class="input-group">
+      <input value="{{post.title}}" name="post-title" type="text" class="form-control" placeholder="New Blog Title">
+      <button data-post_id="{{post.id}}" class="btn btn-outline-secondary" type="submit">Post</button>
+    </div>
+    <textarea name="post-body" class="form-control" placeholder="Blog Post">{{post.body}}</textarea>
+  </form>
+</div>
+
+<button data-post_id="{{post.id}}" id="delete-post-form" type="button" class="btn btn-danger">Delete Post</button>
+
+
+<script src="/js/edit.js"></script>
