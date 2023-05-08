@@ -1,12 +1,15 @@
-<div class="card-body">
+<div class="card">
   {{#each posts}}
-    <a class="card" href="/dashboard/edit/{{id}}">
-      <span>{{title}}</span>
-      <span>{{format_date date_created}}</span>
-      <div>
-        Posted by
-        {{user.username}}
-      </div>
-    </a>
+  <a class="card" href="/dashboard/edit/{{id}}">
+    <span class="card-header">
+      {{title}}
+      {{format_date date_created}}
+      </span>
+  </a>
+
+  <div class="card-body">
+  {{body}}
+  </div>
+    
   {{/each}}
 </div>

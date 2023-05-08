@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// User login route /api/users/login
+// User login route /login
 router.post("/login", async (req, res) => {
   try {
     // Finding a user with the provided username

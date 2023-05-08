@@ -9,8 +9,9 @@ const loginFormHandler = async (event) => {
   // If both username and password have values
   if (username && password) {
     // Send post request to server to authenticate user
-    const response = await fetch("/api/user/login", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
+
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });

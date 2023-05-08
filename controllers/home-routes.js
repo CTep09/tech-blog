@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     //  render the 'all-posts' template and pass in the post data
-    res.render("all-posts-admin", { posts });
+    res.render("all-posts-admin", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -58,7 +58,7 @@ router.get("/signup", (req, res) => {
     return;
   }
   // Render the 'login' template
-  res.render("login");
+  res.render("signup");
 });
 
 // Render the 'signup' template at '/login' endpoint
@@ -69,8 +69,8 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  // Render the 'signup' template
-  res.render("signup");
+  // Render the 'login' template
+  res.render("login");
 });
 
 // Export router

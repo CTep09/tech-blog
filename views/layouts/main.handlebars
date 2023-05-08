@@ -29,11 +29,14 @@
           <!-- Conditional rendering of navbar items based on user login status -->
           {{#if loggedIn}}
           <li class="nav-item">
-            <button id="logout" class="btn btn-link nav-link">Logout</button>
+            <button id="logout" class="btn nav-link">Logout</button>
           </li>
           {{else}}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
           </li>
           {{/if}}
         </ul>
