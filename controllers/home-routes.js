@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     //  render the 'all-posts' template and pass in the post data
-    res.render("all-posts-admin", { posts, loggedIn: req.session.loggedIn });
+    res.render("all-posts", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }

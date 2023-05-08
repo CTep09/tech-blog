@@ -9,7 +9,7 @@ router.get("/", withAuth, async (req, res) => {
     // Find all posts associated with current user
     const postData = await Post.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
     });
 
@@ -18,18 +18,20 @@ router.get("/", withAuth, async (req, res) => {
 
     // Render "all-posts-admin" template and pass in the post data
     res.render("all-posts-admin", {
-      layout: "dashboard",
+      layout: "main",
+      loggedIn: req.session.loggedIn,
       posts,
     });
   } catch (err) {
-    res.redirect("login");
+    // res.redirect("login");
+    res.status(500).json(err);
   }
 });
 
 // Render the 'new-post' template for creating a new post at '/new' endpoint
 router.get("/new", withAuth, (req, res) => {
   res.render("new-post", {
-    layout: "dashboard",
+    layout: "main",
   });
 });
 
@@ -43,7 +45,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
       // If post exists, render 'edit-post' template and pass in post data
       const post = postData.get({ plain: true });
       res.render("edit-post", {
-        layout: "dashboard",
+        layout: "main",
         post,
       });
     } else {

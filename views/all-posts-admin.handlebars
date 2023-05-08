@@ -1,15 +1,21 @@
-<div class="card">
-  {{#each posts}}
-  <a class="card" href="/dashboard/edit/{{id}}">
-    <span class="card-header">
-      {{title}}
-      {{format_date date_created}}
-      </span>
-  </a>
+<header class="hero">
+  <h1>Your Blog Dashboard</h1>
+</header>
 
+{{#each posts}}
+<a class="card" href="/dashboard/edit/{{id}}">
+  <div class="card-header">
+    {{title}}
+    {{format_date date_created}}
+  </div>
   <div class="card-body">
   {{body}}
+
   </div>
-    
-  {{/each}}
-</div>
+</a>
+
+
+{{/each}}
+
+
+  <a href="dashboard/new">Create a New Post</a>

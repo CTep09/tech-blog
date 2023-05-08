@@ -10,7 +10,7 @@ router.post("/", withAuth, async (req, res) => {
     // Assign userId from session to associate comment with user
     const newComment = await Comment.create({
       ...req.body,
-      userId: req.session.userId,
+      user_id: req.session.userId,
     });
     // Send new comment as JSON response
     res.json(newComment);
