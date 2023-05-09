@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
     // Map the post data to plain objects
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts)
+    
     //  render the 'all-posts' template and pass in the post data
     res.render("all-posts", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {

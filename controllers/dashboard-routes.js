@@ -16,8 +16,8 @@ router.get("/", withAuth, async (req, res) => {
     // map the post data to plain objects
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // Render "all-posts-admin" template and pass in the post data
-    res.render("all-posts-admin", {
+    // Render "all-posts-loggedin" template and pass in the post data
+    res.render("all-posts-loggedin", {
       layout: "main",
       loggedIn: req.session.loggedIn,
       posts,

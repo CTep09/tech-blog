@@ -1,21 +1,53 @@
-<div class='posts'>
-    <article class='card'>
-      <div class='card-title'>
-        <h2>
-          {{post.title}}
-        </h2>
-        <div>
-          Posted by
-          {{post.user.username}}
-          on
-          {{format_date post.date_created}}
-        </div>
+<div class="post">
+  <article class="card">
+    <div class="card-header">
+      <h2 class="card-title">{{post.title}}</h2>
+      <div>
+        Posted by
+        {{post.user.username}}
+        on
+        {{format_date post.date_created}}
       </div>
-      <div class='card-body'>
-        {{post.body}}
+    </div>
+    <div class="card-body">
+      {{post.body}}
+    </div>
+  </article>
+
+  {{#if post.Comment}}
+  <section class="card">
+    <div class="card-header">
+      <h3>Comments</h3>
+    </div>
+
+    <div class="card-body">
+      {{#each post.Comment}}
+      <div>
+        <p>
+          {{body}}
+        </p>
+        <p>
+          {{user.username}},
+        </p>
       </div>
-    </article>
+      {{/each}}
+    </div>
+  </section>
+  {{/if}}
+
+  <form id="new-comment-form" class="card">
+    <div class="card-header">
+
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="form-floating">
+      <input type="hidden" name="post-id" value="{{post.id}}" />
+
+      <textarea name="comment-body" class="form-input"></textarea>
+
+      <button type="submit" class="btn btn-outline-success">Submit</button>
+    </div>
+  </form>
 </div>
-
-
-<script src="/js/edit.js"></script>
+<script src="/js/comment.js"></script>
