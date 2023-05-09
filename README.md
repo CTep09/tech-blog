@@ -17,6 +17,15 @@ Tech Blog is a website where users can post their thoughts on the latest technol
 
 ## 💻 Usage
 
+Tech blog hosts blog posts for everyone to see, just visit the site link above. In order to create posts, users must create an account. 
+
+![Tech Blog Homepage](./images/tech-blog-homepage.png)
+
+Once the account has been made from the homepage, users can create, edit, delete posts as well as comment on other users posts.
+
+![Comment on Blog](./images/comment.png)
+
+
 ## 🚀 Technology
 
 
