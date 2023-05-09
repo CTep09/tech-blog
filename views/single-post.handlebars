@@ -14,20 +14,20 @@
     </div>
   </article>
 
-  {{#if post.Comment}}
+  {{#if post.comments}}
   <section class="card">
     <div class="card-header">
       <h3>Comments</h3>
     </div>
 
     <div class="card-body">
-      {{#each post.Comment}}
-      <div>
+      {{#each post.comments as | comment | }}
+      <div class="container bg-dark text-light p-2 m-2 rounded" >
         <p>
-          {{body}}
+          {{comment.body}}
         </p>
         <p>
-          {{user.username}},
+          {{comment.user.username}}
         </p>
       </div>
       {{/each}}
@@ -37,7 +37,6 @@
 
   <form id="new-comment-form" class="card">
     <div class="card-header">
-
       <h3>Add New Comment</h3>
     </div>
 

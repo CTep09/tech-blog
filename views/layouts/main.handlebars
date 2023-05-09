@@ -18,23 +18,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link font-monospace" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <a class="nav-link font-monospace" href="/dashboard">Dashboard</a>
           </li>
 
           <!-- Conditional rendering of navbar items based on user login status -->
           {{#if loggedIn}}
           <li class="nav-item">
-            <button id="logout" class="btn nav-link">Logout</button>
+            <button id="logout" class="btn nav-link font-monospace">Logout</button>
           </li>
           {{else}}
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link font-monospace" href="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign Up</a>
+            <a class="nav-link font-monospace" href="/signup">Sign Up</a>
           </li>
           {{/if}}
         </ul>
@@ -44,7 +44,7 @@
 </header>
 
 <figure class="text-center">
-<h1>Tech Blog</h1>
+<h1 class="font-monospace" >Tech Blog</h1>
 </figure>
 
 <main>

@@ -5,23 +5,20 @@
 ## Table of Contents
 
 - [**Description**](#📑-description)
-- [**Installation**](#💾-installation)
 - [**Usage**](#💻-usage)
-- [**Contribution**](#🤝-contribution)
 - [**Technology**](#🚀-technology)
 - [**Questions**](#❓-questions)
 
 ## 📑 Description
 
-A website where users can post their thoughts on the latest technology or anything they want and leave comments as well.
+Tech Blog is a website where users can post their thoughts on the latest technology or anything they want. When a user visits the site they will see posts that other users have made and any comments as well. Once the user creates an account they can begin making their own blog posts. Users also have the ability to edit or even delete any posts that they have made.
 
 [Visit Live Site Here](https://ct-tech-blog.herokuapp.com/)
 
 ## 💻 Usage
 
-## 🤝 Contribution
-
 ## 🚀 Technology
+
 
 [![My Skills](https://skillicons.dev/icons?i=bootstrap,express,heroku,mysql,nodejs,js,sequelize,visualstudio&perline=4)](https://skillicons.dev)
 
