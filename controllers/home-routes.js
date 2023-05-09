@@ -33,12 +33,10 @@ router.get("/posts/:id", async (req, res) => {
         },
       ],
     });
-    console.log(postData)
 
     if (postData) {
       // If post exists, retrieve its plain object representation
       const post = postData.get({ plain: true });
-      console.log(post)
       // Render the 'single-post' template and pass in the post data
       res.render("single-post", { post });
     } else {
