@@ -1,4 +1,4 @@
-const postId = document.querySelector('#delete-post-form').dataset.post_id
+const postId = document.querySelector('#delete-btn').dataset.post_id;
 
 // Event handler for the edit post form submission
 const editFormHandler = async function (event) {
@@ -26,9 +26,15 @@ const editFormHandler = async function (event) {
 };
 
 const deleteFormHandler = async function (event) {
-  await fetch(`/api/posts/${postId}`, {
+  const response = await fetch(`/api/posts/${postId}`, {
     method: "DELETE",
   });
+  if (response.ok) {
+    document.location.replace("/dashboard");
+  } else {
+    alert('Unable to delete post')
+  }
+
 };
 
 // Add an event listeners

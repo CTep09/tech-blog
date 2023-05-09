@@ -14,7 +14,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 // Configure Session
 const sesh = {
   // Secret key for session encryption
-  secret: "Super secret",
+  secret: "Super secret secret",
   // Cookie configuration (default values)
   cookie: {},
   // Forces the session to be saved back to the session store
